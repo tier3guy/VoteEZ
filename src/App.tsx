@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// Internal Imports
+import { Suspense } from "react";
 
-function App() {
+// External Imports
+import { Routes, Route } from "react-router-dom";
+
+// Routes
+import { APP_ROUTES, AUTH_ROUTES } from "./routes";
+
+// Hooks
+import { useAuth } from "./hooks";
+
+const App: React.FC = () => {
+  const { isLoggedIn } = useAuth();
+  const __routes__ = isLoggedIn ? APP_ROUTES : AUTH_ROUTES;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense>
+      <Routes>
+        {__routes__.map((__route__, index) => {
+          const Page = __route__.element;
+          return <Route key={index} path={__route__.path} element={<Page />} />;
+        })}
+      </Routes>
+    </Suspense>
   );
-}
+};
 
 export default App;
