@@ -17,23 +17,17 @@ export const AUTH_ROUTES: Array<RoutesType> = [
   {
     __id: "1",
     exact: true,
-    path: "/auth",
-    element: "AuthScreen",
-  },
-  {
-    __id: "2",
-    exact: true,
     path: "/auth/login/",
     element: LoginScreen,
   },
   {
-    __id: "3",
+    __id: "2",
     exact: true,
     path: "/auth/signup/",
     element: SignupScreen,
   },
   {
-    __id: "4",
+    __id: "3",
     exact: true,
     path: "/auth/forget-password",
     element: ForgetPasswordScreen,

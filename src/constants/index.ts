@@ -21,7 +21,7 @@ export const ENVIRONMENT: string = "DEVELOPMENT";
  * the environment or server location.
  *
  * @type {string}
- * @default "http://164.52.210.121:8000/api/v1"
+ * @default ""
  */
 export const BACKEND_SERVER_BASE_URL: string =
   ENVIRONMENT === "DEVELOPMENT"
