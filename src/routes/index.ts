@@ -11,6 +11,7 @@ const SignupScreen = lazy(() => import("../pages/Auth/Signup"));
 const ForgetPasswordScreen = lazy(() => import("../pages/Auth/ForgetPassword"));
 
 // App Pages
+const HomeScreen = lazy(() => import("../pages/Home"));
 
 export const AUTH_ROUTES: Array<RoutesType> = [
   {
@@ -22,13 +23,13 @@ export const AUTH_ROUTES: Array<RoutesType> = [
   {
     __id: "2",
     exact: true,
-    path: "/auth/login/:user",
+    path: "/auth/login/",
     element: LoginScreen,
   },
   {
     __id: "3",
     exact: true,
-    path: "/auth/signup/:user",
+    path: "/auth/signup/",
     element: SignupScreen,
   },
   {
@@ -39,4 +40,11 @@ export const AUTH_ROUTES: Array<RoutesType> = [
   },
 ];
 
-export const APP_ROUTES: Array<RoutesType> = [];
+export const APP_ROUTES: Array<RoutesType> = [
+  {
+    __id: "1",
+    exact: true,
+    path: "/",
+    element: HomeScreen,
+  },
+];

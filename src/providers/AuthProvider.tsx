@@ -37,13 +37,13 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 
   // Function to check the user login status
   const checkUserLoginStatus = useCallback(async () => {
-    setLoading(true);
+    // setLoading(true);
     const token = getAccessToken("access_token");
-    if (token !== null) {
-      setIsLoggedIn(true);
-      setAccessToken(token);
-      setLoading(false);
-    } else setLoading(false);
+    // if (token !== null) {
+    setIsLoggedIn(true);
+    setAccessToken(token);
+    setLoading(false);
+    // } else setLoading(false);
   }, []);
 
   // Checks user login status when the component mounts
