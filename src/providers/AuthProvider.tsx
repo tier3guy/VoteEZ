@@ -40,7 +40,7 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     // setLoading(true);
     const token = getAccessToken("access_token");
     // if (token !== null) {
-    setIsLoggedIn(true);
+    setIsLoggedIn(false);
     setAccessToken(token);
     setLoading(false);
     // } else setLoading(false);

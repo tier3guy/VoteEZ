@@ -14,14 +14,16 @@ const LinkButton: React.FC<ButtonPropType> = ({
   label = "Button",
   action = () => {},
   className = "",
+  href = "",
 }) => {
   return (
-    <li
+    <a
       className={`list-none decoration-none text-gray-500 cursor-pointer hover:underline ${className}`}
       onClick={action}
+      href={href}
     >
       {label}
-    </li>
+    </a>
   );
 };
 
