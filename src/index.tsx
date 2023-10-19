@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 
 // External Imports
 import { BrowserRouter as Router } from "react-router-dom";
+import { ThirdwebProvider } from "@thirdweb-dev/react";
 
 // Styles
 import "./index.css";
@@ -19,10 +20,12 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <StrictMode>
-    <Router>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
-    </Router>
+    <ThirdwebProvider>
+      <Router>
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+      </Router>
+    </ThirdwebProvider>
   </StrictMode>
 );
